@@ -28,3 +28,30 @@ Lorsque mode est égal à -, la fonction affine() effectue le déchiffrement en 
 Conclusion
 
 La fonction affine() permet de chiffrer ou de déchiffrer un texte en utilisant un chiffrement affine. Le coefficient de rotation a doit être premier avec 26 pour que le chiffrement soit sécurisé.
+
+
+--------------------Chiffrement de polybe --------------------------------------
+
+Le code ci-dessus permet de chiffrer ou déchiffrer un texte en utilisant le chiffrement de Polybe.
+
+Le chiffrement de Polybe est un chiffrement par substitution qui utilise un carré de Polybe. Un carré de Polybe est un tableau de 5x5 contenant les lettres de l'alphabet.
+
+Pour chiffrer un texte, on remplace chaque lettre par sa position dans le carré de Polybe. Par exemple, la lettre "A" est remplacée par "11", la lettre "B" par "12", etc.
+
+Le code ci-dessus fonctionne comme suit :
+
+La fonction polybe() prend deux arguments :
+message : le texte à chiffrer ou à déchiffrer
+operation : l'opération à effectuer (chiffrement ou déchiffrement)
+La fonction commence par créer une variable grille qui contient le carré de Polybe.
+Si l'opération est le chiffrement, la fonction parcourt chaque lettre du message.
+Si la lettre est J, elle est remplacée par I.
+Pour chaque lettre, la fonction parcourt chaque cellule de la grille.
+Si la cellule contient la lettre, la fonction ajoute la position de la cellule à la variable chiffre.
+La fonction renvoie la variable chiffre.
+Si l'opération est le déchiffrement, la fonction parcourt le texte chiffré.
+Pour chaque paire de chiffres, la fonction calcule la ligne et la colonne correspondantes dans la grille.
+La fonction renvoie la lettre à la position (ligne, colonne).
+Par exemple, pour chiffrer le texte "HELLO", on obtient le texte chiffré "12345".
+
+Pour déchiffrer le texte "12345", on obtient le texte clair "HELLO".
